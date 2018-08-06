@@ -114,9 +114,9 @@ public class ArticleAction {
         // ...其他参数参考类注释
         UploadManager uploadManager = new UploadManager(cfg);
         // ...生成上传凭证，然后准备上传
-        String accessKey = "UdzkULHdDaACW4DfIOwKJv7-gSgKXtPVWzIY6Iah";
-        String secretKey = "6G_2SMK2J2cR7yUTRrp2cX-zLUB0ejbx6Rrdu46P";
-        String bucket = "blog";
+        String accessKey = "XXXXXXXXXX";
+        String secretKey = "XXXXXXXXXXXXXXXXXXXXX";
+        String bucket = "XXXXX";
         // 默认不指定key的情况下，以文件内容的hash值作为文件名
         String key = null;
 
