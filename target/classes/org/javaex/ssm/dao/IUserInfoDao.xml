@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="org.javaex.ssm.dao.IUserInfoDao">
+    <!-- 建立sql查询结果字段与实体属性的映射关系 -->
+    <resultMap id="UserInfoMap" type="org.javaex.ssm.view.User">
+        <result column="id" property="id" />
+        <result column="login_name" property="username" />
+        <result column="password" property="password" />
+    </resultMap>
+
+    <!-- 校验用户 -->
+    <select id="checkUser" resultMap="UserInfoMap">
+        SELECT
+        *
+        FROM
+        user
+        WHERE
+        login_name = #{username}
+        and
+        password = #{password}
+        <if test="username != null and username != ''">AND login_name=#{username}</if>
+        <if test="password != null and password != ''">AND password=#{password}</if>
+    </select>
+</mapper>
